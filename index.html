@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analog clock</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+  <div class = "container">
+    <div class = "clock">
+      <div style="--clr:gray; --h:70px;" id="hour" class = "head"><i></i></div>
+      <div style="--clr:lightblue; --h:82px;" id="min" class = "head"><i></i></div>
+      <div style="--clr:white; --h:95px;" id="sec" class = "head"><i></i></div>
+      <p class ="name">Rolex</p>
+      <p class="title">CLOCK</p>
+      <span style = "--i:1;"><b>1</b></span>
+      <span style = "--i:2;"><b>2</b></span>
+      <span style = "--i:3;"><b>3</b></span>
+      <span style = "--i:4;"><b>4</b></span>
+      <span style = "--i:5;"><b>5</b></span>
+      <span style = "--i:6;"><b>6</b></span>
+      <span style = "--i:7;"><b>7</b></span>
+      <span style = "--i:8;"><b>8</b></span>
+      <span style = "--i:9;"><b>9</b></span>
+      <span style = "--i:10;"><b>10</b></span>
+      <span style = "--i:11;"><b>11</b></span>
+      <span style = "--i:12;"><b>12</b></span>
+      
+    </div>
+    
+  </div>
+
+  <script>
+    let hr = document.getElementById('hour');
+    let min = document.getElementById('min');
+    let sec = document.getElementById('sec');
+    
+    function displayTime(){
+     let date = new Date();
+     
+     
+     let hh = date.getHours();
+     let mm = date.getMinutes();
+     let ss = date.getSeconds();
+     
+     let hRotation = 30*hh + mm/2;
+     let mRotation = 6*mm;
+     let sRotation = 6*ss;
+     
+     
+     hr.style.transform = `rotate(${hRotation}deg)`;
+     min.style.transform = `rotate(${mRotation}deg)`;
+     sec.style.transform = `rotate(${sRotation}deg)`;
+     
+    }
+    setInterval(displayTime,1000);
+    
+  </script>
+</body>
+</html>
